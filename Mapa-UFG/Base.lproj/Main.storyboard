@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KYa-L1-TUq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="zLT-hB-5v1">
+            <objects>
+                <tableViewController id="igZ-4B-hPI" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HuQ-JN-Eie">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jzm-AJ-qud">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzm-AJ-qud" id="CmV-8h-G4n">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="igZ-4B-hPI" id="pBM-Yp-iRI"/>
+                            <outlet property="delegate" destination="igZ-4B-hPI" id="rgh-2B-axP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIr-Fo-Smu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-716" y="842"/>
+        </scene>
+        <!--Campus Samambaia-->
+        <scene sceneID="zhc-eL-tYx">
+            <objects>
+                <viewController id="5ly-ID-H7I" customClass="MainViewController" customModule="Mapa_UFG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sNO-PB-9g3"/>
+                        <viewControllerLayoutGuide type="bottom" id="6ZO-0H-URC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PiH-fQ-KtZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXH-JQ-fph" userLabel="GoogleMap" customClass="Map" customModule="Mapa_UFG" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6ZO-0H-URC" firstAttribute="top" secondItem="zXH-JQ-fph" secondAttribute="bottom" id="3tD-oO-g8D"/>
+                            <constraint firstAttribute="trailing" secondItem="zXH-JQ-fph" secondAttribute="trailing" id="HjO-yc-OgO"/>
+                            <constraint firstItem="zXH-JQ-fph" firstAttribute="top" secondItem="sNO-PB-9g3" secondAttribute="bottom" id="gKn-VZ-Yy7"/>
+                            <constraint firstItem="zXH-JQ-fph" firstAttribute="leading" secondItem="PiH-fQ-KtZ" secondAttribute="leading" id="uIb-cA-gcE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus Samambaia" id="BnT-hi-Zg0">
+                        <barButtonItem key="leftBarButtonItem" image="Menu Filled-50" id="LIE-nI-P2q"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="LIE-nI-P2q" id="4mk-Le-P6E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYS-eI-BLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="841.52923538230891"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="Nci-BA-Cy1">
+            <objects>
+                <viewController id="KYa-L1-TUq" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B7A-dI-QwC"/>
+                        <viewControllerLayoutGuide type="bottom" id="te5-Eb-8DI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hFd-yI-A94">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="igZ-4B-hPI" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="D59-9V-u2R"/>
+                        <segue destination="zAi-UZ-VST" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="gaH-Zs-IXT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqo-Uj-657" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="84"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U0T-fG-cP9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zAi-UZ-VST" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eZI-ge-iLf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5ly-ID-H7I" kind="relationship" relationship="rootViewController" id="Yy1-UH-F8M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAo-Op-kqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="841.52923538230891"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Menu Filled-50" width="24" height="24"/>
+    </resources>
+</document>

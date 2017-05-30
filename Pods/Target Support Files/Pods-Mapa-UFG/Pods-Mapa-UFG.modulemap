@@ -1,0 +1,6 @@
+framework module Pods_Mapa_UFG {
+  umbrella header "Pods-Mapa-UFG-umbrella.h"
+
+  export *
+  module * { export * }
+}

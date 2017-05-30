@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C1DD3D41ED2496C006EC670 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1DD3D31ED2496C006EC670 /* Map.swift */; };
+		5C241BC31ED37AAC006EF9FE /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C241BC21ED37AAC006EF9FE /* Marker.swift */; };
+		5C6F9B341ED0FCBF00F5FE3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F9B331ED0FCBF00F5FE3E /* AppDelegate.swift */; };
+		5C6F9B361ED0FCBF00F5FE3E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F9B351ED0FCBF00F5FE3E /* MainViewController.swift */; };
+		5C6F9B391ED0FCBF00F5FE3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F9B371ED0FCBF00F5FE3E /* Main.storyboard */; };
+		5C6F9B3B1ED0FCBF00F5FE3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F9B3A1ED0FCBF00F5FE3E /* Assets.xcassets */; };
+		5C6F9B3E1ED0FCBF00F5FE3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F9B3C1ED0FCBF00F5FE3E /* LaunchScreen.storyboard */; };
+		5C95D7F11EDA4586003C831B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C95D7F01EDA4586003C831B /* SWRevealViewController.m */; };
+		F1883B36904DB30EAAD1A43C /* Pods_Mapa_UFG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED178C12DD3BD9E8A387D288 /* Pods_Mapa_UFG.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5C1DD3D31ED2496C006EC670 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		5C241BC21ED37AAC006EF9FE /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		5C6F9B301ED0FCBF00F5FE3E /* Mapa-UFG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mapa-UFG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6F9B331ED0FCBF00F5FE3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C6F9B351ED0FCBF00F5FE3E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5C6F9B381ED0FCBF00F5FE3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C6F9B3A1ED0FCBF00F5FE3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C6F9B3D1ED0FCBF00F5FE3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C6F9B3F1ED0FCBF00F5FE3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C95D7EE1EDA4585003C831B /* Mapa-UFG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mapa-UFG-Bridging-Header.h"; sourceTree = "<group>"; };
+		5C95D7EF1EDA4586003C831B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		5C95D7F01EDA4586003C831B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C8DA57E2099E44208E8319F3 /* Pods-Mapa-UFG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapa-UFG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapa-UFG/Pods-Mapa-UFG.debug.xcconfig"; sourceTree = "<group>"; };
+		ED178C12DD3BD9E8A387D288 /* Pods_Mapa_UFG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapa_UFG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD48B94D727017712056B847 /* Pods-Mapa-UFG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapa-UFG.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapa-UFG/Pods-Mapa-UFG.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C6F9B2D1ED0FCBE00F5FE3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1883B36904DB30EAAD1A43C /* Pods_Mapa_UFG.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3491ECCF5CC38CD8CBE4EEDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED178C12DD3BD9E8A387D288 /* Pods_Mapa_UFG.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C6F9B271ED0FCBE00F5FE3E = {
+			isa = PBXGroup;
+			children = (
+				5C6F9B321ED0FCBF00F5FE3E /* Mapa-UFG */,
+				5C6F9B311ED0FCBF00F5FE3E /* Products */,
+				5CAFCE0E42CF71024B952E87 /* Pods */,
+				3491ECCF5CC38CD8CBE4EEDC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C6F9B311ED0FCBF00F5FE3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C6F9B301ED0FCBF00F5FE3E /* Mapa-UFG.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C6F9B321ED0FCBF00F5FE3E /* Mapa-UFG */ = {
+			isa = PBXGroup;
+			children = (
+				5C6F9B331ED0FCBF00F5FE3E /* AppDelegate.swift */,
+				5C6F9B351ED0FCBF00F5FE3E /* MainViewController.swift */,
+				5C1DD3D31ED2496C006EC670 /* Map.swift */,
+				5C241BC21ED37AAC006EF9FE /* Marker.swift */,
+				5C6F9B371ED0FCBF00F5FE3E /* Main.storyboard */,
+				5C6F9B3A1ED0FCBF00F5FE3E /* Assets.xcassets */,
+				5C6F9B3C1ED0FCBF00F5FE3E /* LaunchScreen.storyboard */,
+				5C6F9B3F1ED0FCBF00F5FE3E /* Info.plist */,
+				5C95D7EF1EDA4586003C831B /* SWRevealViewController.h */,
+				5C95D7F01EDA4586003C831B /* SWRevealViewController.m */,
+				5C95D7EE1EDA4585003C831B /* Mapa-UFG-Bridging-Header.h */,
+			);
+			path = "Mapa-UFG";
+			sourceTree = "<group>";
+		};
+		5CAFCE0E42CF71024B952E87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8DA57E2099E44208E8319F3 /* Pods-Mapa-UFG.debug.xcconfig */,
+				FD48B94D727017712056B847 /* Pods-Mapa-UFG.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C6F9B2F1ED0FCBE00F5FE3E /* Mapa-UFG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C6F9B421ED0FCBF00F5FE3E /* Build configuration list for PBXNativeTarget "Mapa-UFG" */;
+			buildPhases = (
+				04BD2494FBB78BD75925405B /* [CP] Check Pods Manifest.lock */,
+				5C6F9B2C1ED0FCBE00F5FE3E /* Sources */,
+				5C6F9B2D1ED0FCBE00F5FE3E /* Frameworks */,
+				5C6F9B2E1ED0FCBE00F5FE3E /* Resources */,
+				FD4520130A001F79FC6D40CC /* [CP] Embed Pods Frameworks */,
+				B0D3902FDBDF75194A0643BF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mapa-UFG";
+			productName = "Mapa-UFG";
+			productReference = 5C6F9B301ED0FCBF00F5FE3E /* Mapa-UFG.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C6F9B281ED0FCBE00F5FE3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Tiago Hermano";
+				TargetAttributes = {
+					5C6F9B2F1ED0FCBE00F5FE3E = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5C6F9B2B1ED0FCBE00F5FE3E /* Build configuration list for PBXProject "Mapa-UFG" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C6F9B271ED0FCBE00F5FE3E;
+			productRefGroup = 5C6F9B311ED0FCBF00F5FE3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C6F9B2F1ED0FCBE00F5FE3E /* Mapa-UFG */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C6F9B2E1ED0FCBE00F5FE3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C6F9B3E1ED0FCBF00F5FE3E /* LaunchScreen.storyboard in Resources */,
+				5C6F9B3B1ED0FCBF00F5FE3E /* Assets.xcassets in Resources */,
+				5C6F9B391ED0FCBF00F5FE3E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04BD2494FBB78BD75925405B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B0D3902FDBDF75194A0643BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mapa-UFG/Pods-Mapa-UFG-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4520130A001F79FC6D40CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mapa-UFG/Pods-Mapa-UFG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C6F9B2C1ED0FCBE00F5FE3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C6F9B361ED0FCBF00F5FE3E /* MainViewController.swift in Sources */,
+				5C241BC31ED37AAC006EF9FE /* Marker.swift in Sources */,
+				5C95D7F11EDA4586003C831B /* SWRevealViewController.m in Sources */,
+				5C1DD3D41ED2496C006EC670 /* Map.swift in Sources */,
+				5C6F9B341ED0FCBF00F5FE3E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C6F9B371ED0FCBF00F5FE3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C6F9B381ED0FCBF00F5FE3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C6F9B3C1ED0FCBF00F5FE3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C6F9B3D1ED0FCBF00F5FE3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C6F9B401ED0FCBF00F5FE3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C6F9B411ED0FCBF00F5FE3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C6F9B431ED0FCBF00F5FE3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8DA57E2099E44208E8319F3 /* Pods-Mapa-UFG.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Mapa-UFG/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tiagohermano.Mapa-UFG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mapa-UFG/Mapa-UFG-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5C6F9B441ED0FCBF00F5FE3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD48B94D727017712056B847 /* Pods-Mapa-UFG.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Mapa-UFG/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tiagohermano.Mapa-UFG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mapa-UFG/Mapa-UFG-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C6F9B2B1ED0FCBE00F5FE3E /* Build configuration list for PBXProject "Mapa-UFG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C6F9B401ED0FCBF00F5FE3E /* Debug */,
+				5C6F9B411ED0FCBF00F5FE3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C6F9B421ED0FCBF00F5FE3E /* Build configuration list for PBXNativeTarget "Mapa-UFG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C6F9B431ED0FCBF00F5FE3E /* Debug */,
+				5C6F9B441ED0FCBF00F5FE3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C6F9B281ED0FCBE00F5FE3E /* Project object */;
+}
