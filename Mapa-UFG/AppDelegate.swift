@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Mapa-UFG
 //
-//  Created by tulio ferreira hermano on 20/05/17.
+//  Created by Tiago Ferreira Hermano on 20/05/17.
 //  Copyright © 2017 Tiago Hermano. All rights reserved.
 //
 
