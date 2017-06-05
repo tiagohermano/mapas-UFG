@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Mapa-UFG
 //
-//  Created by tulio ferreira hermano on 20/05/17.
+//  Created by Tiago Ferreira Hermano on 20/05/17.
 //  Copyright © 2017 Tiago Hermano. All rights reserved.
 //
 
@@ -15,10 +15,19 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         sideMenu()
         
-        let mapView = Map()
+        let map = Map()
+        map.configLocationManager()
+        
+        let campusSamambaia = CLLocation.init(latitude: -16.6021102, longitude: -49.2656253)
+        let mapView = map.setInitialMap(location: campusSamambaia)
+        
         view = mapView
+        
+//        let mapView = Map.setInitialMap()
+//        view = mapView
         // Do any additional setup after loading the view, typically from a nib.
     }
     
