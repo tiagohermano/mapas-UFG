@@ -12,6 +12,7 @@ import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
 import Alamofire
+import MapKit
 
 class Map: GMSMapView {
     var mapView: GMSMapView?
@@ -42,6 +43,25 @@ class Map: GMSMapView {
     func showLocation(location: CLLocation) {
         self.mapCamera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 18)
         mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera!)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status != .authorizedWhenInUse && status != .notDetermined {
+            let alertController = UIAlertController(title: "Permissão de localização", message: "Necessária a permissão para o acesso à sua localização.", preferredStyle: .alert)
+            
+            let acaoConfiguracoes = UIAlertAction(title: "Abrir Configurações", style: .default, handler: { (alertaConfiguracoes) in
+                if let configuracoes = NSURL(string: UIApplicationOpenSettingsURLString) {
+                    UIApplication.shared.open(configuracoes as URL)
+                }
+            })
+            
+            let acaoCancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+            
+            alertController.addAction(acaoConfiguracoes)
+            alertController.addAction(acaoCancelar)
+            
+            alertController.show()
+        }
     }
     
     func configLocationManager() {
@@ -118,6 +138,32 @@ class Map: GMSMapView {
 
 }
 
-extension Map: CLLocationManagerDelegate {
+extension Map: MKMapViewDelegate, CLLocationManagerDelegate {
     
+}
+
+extension UIAlertController {
+    
+    func show() {
+        present(animated: true, completion: nil)
+    }
+    
+    func present(animated: Bool, completion: (() -> Void)?) {
+        if let rootVC = UIApplication.shared.keyWindow?.rootViewController {
+            presentFromController(controller: rootVC, animated: animated, completion: completion)
+        }
+    }
+    
+    private func presentFromController(controller: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        if let navVC = controller as? UINavigationController,
+            let visibleVC = navVC.visibleViewController {
+            presentFromController(controller: visibleVC, animated: animated, completion: completion)
+        } else
+            if let tabVC = controller as? UITabBarController,
+                let selectedVC = tabVC.selectedViewController {
+                presentFromController(controller: selectedVC, animated: animated, completion: completion)
+            } else {
+                controller.present(self, animated: animated, completion: completion);
+        }
+    }
 }
