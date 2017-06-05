@@ -18,6 +18,7 @@ class Map: GMSMapView {
     var mapView: GMSMapView?
     var mapCamera: GMSCameraPosition?
     var locationManager: CLLocationManager?
+    var marker = Marker()
     
     func setInitialMap(location: CLLocation) -> GMSMapView {
 //        mapCamera = GMSCameraPosition.camera(withLatitude: -16.6021102, longitude: -49.2656253, zoom: 16)
@@ -81,16 +82,6 @@ class Map: GMSMapView {
         self.mapCamera = GMSCameraPosition.camera(withLatitude: localizacao.latitude, longitude: localizacao.longitude, zoom: 18)
     }
     
-    func getMarker(nome: String, descricao: String, localizacao: CLLocationCoordinate2D) -> GMSMarker {
-        let marker = GMSMarker()
-        marker.title = nome
-        marker.position = localizacao
-        marker.snippet = descricao
-        marker.appearAnimation = .pop
-        
-        return marker
-    }
-    
     func drawPath(destination: CLLocation) {
         let origin = "\(mapView?.myLocation?.coordinate.latitude), \(mapView?.myLocation?.coordinate.longitude)"
         let endLocation = "\(destination.coordinate.latitude), \(destination.coordinate.longitude)"
@@ -128,7 +119,7 @@ class Map: GMSMapView {
         switch categoria {
             case "Lanconetes": break
                 // CRIAR MARCADORES DE LANCONETES
-            let marcador = getMarker(nome: "Reuni", descricao: "Lanconete", localizacao: CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894))
+            let marcador = marker.getMarker(nome: "Reuni", descricao: "Lanconete", localizacao: CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894))
             
             
         default:
