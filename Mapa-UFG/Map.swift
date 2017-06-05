@@ -2,7 +2,7 @@
 //  Map.swift
 //  Mapa-UFG
 //
-//  Created by tulio ferreira hermano on 21/05/17.
+//  Created by Tiago Ferreira Hermano on 21/05/17.
 //  Copyright © 2017 Tiago Hermano. All rights reserved.
 //
 
@@ -14,30 +14,52 @@ import SwiftyJSON
 import Alamofire
 
 class Map: GMSMapView {
-    var mapView: GMSMapView!
-    var mapCamera: GMSCameraPosition!
+    var mapView: GMSMapView?
+    var mapCamera: GMSCameraPosition?
+    var locationManager: CLLocationManager?
     
-//    static func setInitialMap() -> UIView {
-//        
-//        let mapCamera = GMSCameraPosition.camera(withLatitude: -16.6021102, longitude: -49.2656253, zoom: 16)
-//        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-//        self.mapView.isMyLocationEnabled = true
-//        
-//        self.mapView.settings.compassButton = true
-//        self.mapView.isMyLocationEnabled = true
-//        mapView.isBuildingsEnabled = true
-//        mapView.settings.myLocationButton = true
-//        
-//        
-//        let marker = GMSMarker()
-//        marker.title = "UFG"
-//        marker.position = camera.target
-//        marker.snippet = "Universidade Federal de Goiás"
-//        marker.appearAnimation = .pop
-//        marker.map = mapView
-//        
-//        return mapView
-//    }
+    func setInitialMap(location: CLLocation) -> GMSMapView {
+//        mapCamera = GMSCameraPosition.camera(withLatitude: -16.6021102, longitude: -49.2656253, zoom: 16)
+        mapCamera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 14)
+        mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera!)
+        
+        mapView?.settings.compassButton = true
+        mapView?.isMyLocationEnabled = true
+        mapView?.isBuildingsEnabled = true
+        mapView?.settings.myLocationButton = true
+        
+        let marker = GMSMarker()
+        marker.icon = #imageLiteral(resourceName: "placeholder")
+        marker.title = "UFG"
+        marker.position = (mapCamera?.target)!
+        marker.snippet = "Universidade Federal de Goiás"
+        marker.appearAnimation = .pop
+        marker.map = mapView
+        
+        return mapView!
+    }
+    
+    func showLocation(location: CLLocation) {
+        self.mapCamera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 18)
+        mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera!)
+    }
+    
+    func configLocationManager() {
+        self.locationManager?.delegate = self
+        self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager?.requestWhenInUseAuthorization()
+        self.locationManager?.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let local = locations.last!
+        
+        // Exibe local
+        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(local.coordinate.latitude, local.coordinate.longitude)
+        
+        // Monta Exibição do mapa
+        self.mapCamera = GMSCameraPosition.camera(withLatitude: localizacao.latitude, longitude: localizacao.longitude, zoom: 18)
+    }
     
     func getMarker(nome: String, descricao: String, localizacao: CLLocationCoordinate2D) -> GMSMarker {
         let marker = GMSMarker()
@@ -50,7 +72,7 @@ class Map: GMSMapView {
     }
     
     func drawPath(destination: CLLocation) {
-        let origin = "\(mapView.myLocation?.coordinate.latitude), \(mapView.myLocation?.coordinate.longitude)"
+        let origin = "\(mapView?.myLocation?.coordinate.latitude), \(mapView?.myLocation?.coordinate.longitude)"
         let endLocation = "\(destination.coordinate.latitude), \(destination.coordinate.longitude)"
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -94,4 +116,8 @@ class Map: GMSMapView {
         }
     }
 
+}
+
+extension Map: CLLocationManagerDelegate {
+    
 }
