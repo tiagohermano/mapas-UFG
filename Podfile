@@ -7,7 +7,7 @@ target 'Mapa-UFG' do
 
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'GooglePlacesAPI’
+  pod 'GooglePlacesAPI'
   pod 'SwiftyJSON'
   pod 'Alamofire'
 
