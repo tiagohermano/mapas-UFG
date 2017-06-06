@@ -12,13 +12,15 @@ import GoogleMaps
 
 class Marker: GMSMarker {
     
-    func getMarker(nome: String, descricao: String, localizacao: CLLocationCoordinate2D) -> GMSMarker {
-        let marker = GMSMarker()
-        marker.title = nome
-        marker.position = localizacao
-        marker.snippet = descricao
-        marker.appearAnimation = .pop
+    init(nome: String, descricao: String, localizacao: CLLocationCoordinate2D, icone: UIImage) {
+        super.init()
         
-        return marker
+        super.title = nome
+        super.snippet = descricao
+        super.position = localizacao
+        
+        super.icon = #imageLiteral(resourceName: "placeholder")
+        super.appearAnimation = .pop
     }
+    
 }
