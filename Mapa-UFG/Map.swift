@@ -15,14 +15,13 @@ import Alamofire
 import MapKit
 
 class Map: GMSMapView {
-    var mapView: GMSMapView?
-    var mapCamera: GMSCameraPosition?
-    var locationManager: CLLocationManager?
-    var marker = Marker()
+    var mapView: GMSMapView!
+    var mapCamera: GMSCameraPosition!
+    var locationManager: CLLocationManager!
     
     func setInitialMap(location: CLLocation) -> GMSMapView {
 //        mapCamera = GMSCameraPosition.camera(withLatitude: -16.6021102, longitude: -49.2656253, zoom: 16)
-        mapCamera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 14)
+        mapCamera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 18)
         mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera!)
         
         mapView?.settings.compassButton = true
@@ -30,13 +29,11 @@ class Map: GMSMapView {
         mapView?.isBuildingsEnabled = true
         mapView?.settings.myLocationButton = true
         
-        let marker = GMSMarker()
-        marker.icon = #imageLiteral(resourceName: "placeholder")
-        marker.title = "UFG"
-        marker.position = (mapCamera?.target)!
-        marker.snippet = "Universidade Federal de Goiás"
-        marker.appearAnimation = .pop
+        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
+        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "placeholder"))
         marker.map = mapView
+        
+        self.drawPath(destination: reuni)
         
         return mapView!
     }
@@ -82,13 +79,18 @@ class Map: GMSMapView {
         self.mapCamera = GMSCameraPosition.camera(withLatitude: localizacao.latitude, longitude: localizacao.longitude, zoom: 18)
     }
     
-    func drawPath(destination: CLLocation) {
-        let origin = "\(mapView?.myLocation?.coordinate.latitude), \(mapView?.myLocation?.coordinate.longitude)"
-        let endLocation = "\(destination.coordinate.latitude), \(destination.coordinate.longitude)"
+    func clearMarkers() {
+        mapView?.clear()
+    }
+    
+    func drawPath(destination: CLLocationCoordinate2D) {
+//        let origin = "-16.6021102,-49.2656253"
+        let origin = "\(mapView.myLocation?.coordinate.latitude),\(mapView.myLocation?.coordinate.longitude)"
+        let endLocation = "\(destination.latitude),\(destination.longitude)"
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let url = "https://maps.googleapis.com/maps/apis/directions/json?origin=\(origin)&destination=\(endLocation)&key=\(appDelegate.API_KEY)"
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(endLocation)&key=\(appDelegate.API_KEY)&mode=walking"
         
         Alamofire.request(url).responseJSON { response in
             
@@ -119,7 +121,7 @@ class Map: GMSMapView {
         switch categoria {
             case "Lanconetes": break
                 // CRIAR MARCADORES DE LANCONETES
-            let marcador = marker.getMarker(nome: "Reuni", descricao: "Lanconete", localizacao: CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894))
+//            let marcador = marker.init(nome: "Reuni", descricao: "Lanconete", localizacao: CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894))
             
             
         default:
