@@ -13,7 +13,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    public var API_KEY = "AIzaSyBnBZnGiD6uQqKy2ydjMX53dU7ebTS1Xi0"
+    public var API_KEY = "AIzaSyAK2Fz3wAhrWGZGSU6BClmOVjLLqUmT6is"
     
     func getAPI_KEY() -> String {
         
