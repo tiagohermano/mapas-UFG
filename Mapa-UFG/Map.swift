@@ -30,7 +30,7 @@ class Map: GMSMapView {
         mapView?.settings.myLocationButton = true
         
         let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
-        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "placeholder"))
+        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "Biblioteca_64px"))
         marker.map = mapView
         
         self.drawPath(destination: reuni)
