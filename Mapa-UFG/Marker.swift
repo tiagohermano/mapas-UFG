@@ -19,8 +19,15 @@ class Marker: GMSMarker {
         super.snippet = descricao
         super.position = localizacao
         
-        super.icon = #imageLiteral(resourceName: "placeholder")
+        super.icon = icone
         super.appearAnimation = .pop
+        
+        setIconSize(height: 40, width: 40)
+    }
+    
+    private func setIconSize(height: CGFloat, width: CGFloat) {
+        super.iconView?.frame.size.height = height
+        super.iconView?.frame.size.width = width
     }
     
 }
