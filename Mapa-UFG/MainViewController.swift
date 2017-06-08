@@ -19,10 +19,15 @@ class MainViewController: UIViewController {
         sideMenu()
         
         let map = Map()
-        map.configLocationManager()
         
         let campusSamambaia = CLLocation.init(latitude: -16.6021102, longitude: -49.2656253)
         let mapView = map.setInitialMap(location: campusSamambaia)
+        
+        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
+        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "Biblioteca_64px"))
+        marker.map = mapView
+        
+        map.drawPath(destination: reuni)
         
         view = mapView
         

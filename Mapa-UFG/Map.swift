@@ -18,22 +18,15 @@ class Map: GMSMapView {
     var mapView: GMSMapView!
     var mapCamera: GMSCameraPosition!
     var locationManager: CLLocationManager!
+    var userLocation: CLLocation!
     
     func setInitialMap(location: CLLocation) -> GMSMapView {
 //        mapCamera = GMSCameraPosition.camera(withLatitude: -16.6021102, longitude: -49.2656253, zoom: 16)
         mapCamera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 18)
         mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera!)
         
-        mapView?.settings.compassButton = true
-        mapView?.isMyLocationEnabled = true
-        mapView?.isBuildingsEnabled = true
-        mapView?.settings.myLocationButton = true
-        
-        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
-        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "Biblioteca_64px"))
-        marker.map = mapView
-        
-        self.drawPath(destination: reuni)
+        configMapViewSettings()
+        configLocationManager()
         
         return mapView!
     }
@@ -62,22 +55,61 @@ class Map: GMSMapView {
         }
     }
     
-    func configLocationManager() {
+    private func configLocationManager() {
         self.locationManager?.delegate = self
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager?.requestWhenInUseAuthorization()
         self.locationManager?.startUpdatingLocation()
     }
     
+    private func configMapViewSettings() {
+        mapView?.settings.compassButton = true
+        mapView?.isMyLocationEnabled = true
+        mapView?.isBuildingsEnabled = true
+        mapView?.settings.myLocationButton = true
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let local = locations.last!
+        self.userLocation = locations.last!
+        print("Localizacao usuario: \(userLocation)")
         
         // Exibe local
-        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(local.coordinate.latitude, local.coordinate.longitude)
+        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude)
         
         // Monta Exibição do mapa
         self.mapCamera = GMSCameraPosition.camera(withLatitude: localizacao.latitude, longitude: localizacao.longitude, zoom: 18)
     }
+    
+    
+    // MARK: - GMSMapViewDelegate
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        self.mapView.isMyLocationEnabled = true
+    }
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        self.mapView.isMyLocationEnabled = true
+        
+        if (gesture) {
+            mapView.selectedMarker = nil
+        }
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        self.mapView.isMyLocationEnabled = true
+        return false
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        print("COORDINATE \(coordinate)") // when you tapped coordinate
+    }
+    
+    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+        self.mapView.isMyLocationEnabled = true
+        self.mapView.selectedMarker = nil
+        return false
+    }
+    
     
     func clearMarkers() {
         mapView?.clear()
@@ -85,7 +117,7 @@ class Map: GMSMapView {
     
     func drawPath(destination: CLLocationCoordinate2D) {
 //        let origin = "-16.6021102,-49.2656253"
-        let origin = "\(mapView.myLocation?.coordinate.latitude),\(mapView.myLocation?.coordinate.longitude)"
+        let origin = "\(userLocation?.coordinate.latitude),\(mapView.myLocation?.coordinate.longitude)"
         let endLocation = "\(destination.latitude),\(destination.longitude)"
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -131,7 +163,7 @@ class Map: GMSMapView {
 
 }
 
-extension Map: MKMapViewDelegate, CLLocationManagerDelegate {
+extension Map: MKMapViewDelegate, CLLocationManagerDelegate, GMSMapViewDelegate {
     
 }
 
