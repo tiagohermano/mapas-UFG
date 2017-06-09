@@ -1,0 +1,216 @@
+{
+	"categorias": {
+		"lanchonetes": {
+			"Lanchonete Reuni": {
+				"titulo": "Lanchonete Reuni",
+				"descrição": "",
+				"latitude": "-16.603975",
+				"longitude": "-49.2650509"
+			},
+			"Lanchonete Delícias do Campus": {
+				"titulo":"Lanchonte Delícias do Campus",
+				"descrição": "",
+				"latitude": "-16.6042936",
+				"longitude": "-49.2624951"
+			},
+			"Lanchonete do DCE": {
+				"titulo":"Lanchonte do DCE",
+				"descrição": "",
+				"latitude": "-16.6042936",
+				"longitude": "-49.2624951"
+			},
+			"Restaurante Universitário": {
+				"titulo": "Restaurante Universitário",
+				"descrição": "",
+				"latitude": "-16.6017059",
+				"longitude": "-49.2622892"
+			},
+			"Lanchonte UFG": {
+				"titulo": "Lanchonte",
+				"descrição": "",
+				"latitude": "-16.5982303",
+				"longitude": "-49.2786711"			
+			}
+
+		}
+
+		"xerox": {
+			"Copiadora Draco": {
+				"titulo": "Copiadora Draco",
+				"descrição": "Copiadora do Diretorio Acadêmico da Computação",
+				"latitude": "-16.6037409",
+				"longitude": "-49.2659903"
+			},
+			"Goiás Cópias":{
+				"titulo": "Goiás Cópias",
+				"descrição": "",
+				"latitude": "-16.6030724",
+				"longitude": "-49.2637093"
+			}
+
+		}
+
+		"restaurantes": {
+			"Restaurante Dona Fátima":{
+				"titulo": "Restaurante Dona Fátima",
+				"descrição": "",
+				"latitude": "-16.6015671",
+				"longitude": "-16.6015671"	
+			},
+			"Restaurante do Meio do Caminho": {
+				"titulo": "Restaurante do Meio do Caminho",
+				"descrição": "",
+				"latitude": "-16.6019492",
+				"longitude": "-49.2697186"	
+			}
+
+
+		"bibliotecas": {
+			"Biblioteca Central":{
+				"titulo": "Biblioteca Central Prof. Alpheu da Veiga Jardim",
+				"descrição": "",
+				"latitude": "-16.6054025",
+				"longitude": "-49.2607847"
+			}	
+		}
+
+		"centros de aulas": {
+			"Centro de Aulas Aroeira":{
+				"titulo": "Centro de Aulas Aroeira",
+				"descrição": "",
+				"latitude": "-16.6033548",
+				"longitude": "-49.264757"
+			},
+			"Centro de Aulas Baru":{
+				"titulo": "Centro de Aulas Baru",
+				"descrição": "",
+				"latitude": "-16.6034524",
+				"longitude": "-49.2651647"
+			},
+			"Centro de Aulas Caraíbas":{
+				"titulo": "Centro de Aulas Caraíbas",
+				"descrição": "",
+				"latitude": "-16.6034524",
+				"longitude": "-49.2651647"
+			}
+			
+		}
+
+		"bancos/caixas":{
+			"Caixa Econômica":{
+				"titulo":"Caixa Econômica",
+				"descrição": "",
+				"latitude": "-16.6022247",
+				"longitude": "-49.2622217"
+			},
+			"Banco do Brasil": {
+				"titulo":"Banco do Brasil",
+				"descrição": "",
+				"latitude": "-16.6036462",
+				"longitude": "-49.2605224"
+			},
+			"Caixa Eletrônico BB": {
+				"titulo": "Caixa Eletrônico do Banco do Brasil",
+				"descrição": "",
+				"latitude": "-16.6067719",
+				"longitude": "-49.2595437"
+			}
+
+		}
+
+		"institutos/faculdades":{
+			"Instituto de Informática":{
+				"titulo": "Instituto de Informática",
+				"descrição": "",
+				"latitude": "-16.6044584",
+				"longitude": "-49.2669766"
+			},
+			"Faculdade de Educação Física e Dança":{
+				"titulo": "Faculdade de Educação Física e Dança",
+				"descrição": "",
+				"latitude": "-16.6057323",
+				"longitude": "-49.2695908"
+			},
+			"Faculdade de Filosofia":{
+				"titulo": "Faculdade de Filosofia",
+				"descrição": "",
+				"latitude": "-16.60638",
+				"longitude": "-49.2680673"
+			},
+			"Instituto de Matemática":{
+				"titulo": "Instituto de Matemática",
+				"descrição": "",
+				"latitude": "-16.6050435",
+				"longitude": "-49.2685286"
+			},
+			"Faculdade de Administração, Ciências Contábeis e Ciências Econômicas":{
+				"titulo": "Faculdade de Administração, Ciências Contábeis e Ciências Econômicas",
+				"descrição": "",
+				"latitude": "-16.6038508",
+				"longitude": "-49.2679493"
+			},
+			"Faculdade de Letras":{
+				"titulo": "Faculdade de Letras",
+				"descrição": "",
+				"latitude": "-16.6036272",
+				"longitude": "-49.2653502"
+			},
+			"Instituto de Física":{
+				"titulo":"Instituto de Física",
+				"descrição": "",
+				"latitude": "-16.6038791",
+				"longitude": "-49.2642773"
+			},
+			"Faculdade de História":{
+				"titulo": "Faculdade de História",
+				"descrição": "",
+				"latitude": "-16.6032558",
+				"longitude": "-49.264277"
+			},
+			"Faculdade de Comunicação Social":{
+				"titulo": "Faculdade de Comunicação Social",
+				"descrição": "",
+				"latitude": " -16.6035946",
+				"longitude": "-49.2638989"
+			},
+			"Faculdade de Ciências Sociais":{
+				"titulo": "Faculdade de Ciências Sociais",
+				"descrição": "",
+				"latitude": "-16.6035946",
+				"longitude": "-49.2638989"
+			},
+			"Instituto de Estudos Socio Ambientais":{
+				"titulo": "Instituto de Estudos Socio Ambientais",
+				"descrição": "",
+				"latitude": "-16.6044442",
+				"longitude": "-49.2658423"
+			},
+			"Faculdade Artes Visuais":{
+				"titulo": "Faculdade Artes Visuais",
+				"descrição": "",
+				"latitude": "-16.6059098",
+				"longitude": "-49.262992"
+			},
+			"Escola de Música e Artes Cênicas":{
+				"titulo": "Escola de Música e Artes Cênicas",
+				"descrição": "",
+				"latitude": "-16.6054488",
+				"longitude": "-49.2616732"
+			},
+			"Escola de Agronomia":{
+				"titulo": "Escola de Agronomia",
+				"descrição": "",
+				"latitude": "-16.5984382",
+				"longitude": "-49.2791888"
+			},
+			"Escola de Engenharia de Alimentos":{
+				"titulo": "Escola de Engenharia de Alimentos",
+				"descrição": "",
+				"latitude": "-16.5982653",
+				"longitude": "-49.2807022"
+			}
+
+		}
+	}
+
+}

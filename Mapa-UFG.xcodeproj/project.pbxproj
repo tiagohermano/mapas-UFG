@@ -17,6 +17,7 @@
 		5C95D7F11EDA4586003C831B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C95D7F01EDA4586003C831B /* SWRevealViewController.m */; };
 		8B00D79F1EE6C69900C9D5EA /* Viewteste.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B00D79E1EE6C69900C9D5EA /* Viewteste.xib */; };
 		8B0752971EE964A5007807F2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0752961EE964A5007807F2 /* Menu.swift */; };
+		8B67CAB91EEABA35003C8ABE /* Locais.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B67CAB81EEABA35003C8ABE /* Locais.json */; };
 		8BA9751E1EE9979600FFBDD6 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9751D1EE9979600FFBDD6 /* MenuTableCell.swift */; };
 		F1883B36904DB30EAAD1A43C /* Pods_Mapa_UFG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED178C12DD3BD9E8A387D288 /* Pods_Mapa_UFG.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		5C95D7F01EDA4586003C831B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8B00D79E1EE6C69900C9D5EA /* Viewteste.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Viewteste.xib; sourceTree = "<group>"; };
 		8B0752961EE964A5007807F2 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		8B67CAB81EEABA35003C8ABE /* Locais.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locais.json; sourceTree = "<group>"; };
 		8BA9751D1EE9979600FFBDD6 /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		C8DA57E2099E44208E8319F3 /* Pods-Mapa-UFG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapa-UFG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapa-UFG/Pods-Mapa-UFG.debug.xcconfig"; sourceTree = "<group>"; };
 		ED178C12DD3BD9E8A387D288 /* Pods_Mapa_UFG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapa_UFG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 		5C6F9B321ED0FCBF00F5FE3E /* Mapa-UFG */ = {
 			isa = PBXGroup;
 			children = (
+				8B67CAB51EEAB90B003C8ABE /* json */,
 				5C6F9B331ED0FCBF00F5FE3E /* AppDelegate.swift */,
 				5C6F9B351ED0FCBF00F5FE3E /* MainViewController.swift */,
 				5C1DD3D31ED2496C006EC670 /* Map.swift */,
@@ -108,6 +111,14 @@
 				FD48B94D727017712056B847 /* Pods-Mapa-UFG.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B67CAB51EEAB90B003C8ABE /* json */ = {
+			isa = PBXGroup;
+			children = (
+				8B67CAB81EEABA35003C8ABE /* Locais.json */,
+			);
+			name = json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6F9B3E1ED0FCBF00F5FE3E /* LaunchScreen.storyboard in Resources */,
+				8B67CAB91EEABA35003C8ABE /* Locais.json in Resources */,
 				5C6F9B3B1ED0FCBF00F5FE3E /* Assets.xcassets in Resources */,
 				8B00D79F1EE6C69900C9D5EA /* Viewteste.xib in Resources */,
 				5C6F9B391ED0FCBF00F5FE3E /* Main.storyboard in Resources */,
