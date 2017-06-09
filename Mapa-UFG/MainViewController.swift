@@ -12,6 +12,7 @@ import GoogleMaps
 class MainViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    var selectedCategory: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class MainViewController: UIViewController {
         let mapView = map.setInitialMap(location: campusSamambaia)
         
         let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
-        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "Biblioteca_64px"))
+        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "PLACEHOLDERS-1"))
         marker.map = mapView
         
         map.drawPath(destination: reuni)
