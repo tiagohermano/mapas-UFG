@@ -11,7 +11,7 @@ import UIKit
 
 class Menu: UITableViewController {
     var itensMenu: [String] = ["Lanchonetes", "Xerox", "Restaurantes", "Bibliotecas", "Centros de Aulas"]
-    var itensImage: [UIImage] = [#imageLiteral(resourceName: "Lanchonete_64px"),#imageLiteral(resourceName: "XEROX_64px"),#imageLiteral(resourceName: "RU_64px"),#imageLiteral(resourceName: "Biblioteca_64px"),#imageLiteral(resourceName: "CA_64px")]
+    var itensImage: [UIImage] = [#imageLiteral(resourceName: "item_lanchonete"),#imageLiteral(resourceName: "item_xerox"),#imageLiteral(resourceName: "item_restaurante"),#imageLiteral(resourceName: "item_biblioteca"),#imageLiteral(resourceName: "item_centro_aulas")]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
