@@ -18,22 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" id="jzm-AJ-qud" customClass="MenuTableCell" customModule="Mapa_UFG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" rowHeight="60" id="jzm-AJ-qud" customClass="MenuTableCell" customModule="Mapa_UFG" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzm-AJ-qud" id="CmV-8h-G4n">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Xk-Jf-zhM">
-                                            <rect key="frame" x="8" y="1" width="40" height="40"/>
+                                            <rect key="frame" x="8" y="10" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="NcZ-c1-3Pq"/>
                                                 <constraint firstAttribute="height" constant="40" id="jRK-Ox-2dO"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-31-JcE">
-                                            <rect key="frame" x="56" y="22" width="311" height="0.0"/>
+                                            <rect key="frame" x="56" y="30" width="311" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -50,6 +50,7 @@
                                 <connections>
                                     <outlet property="iconImageView" destination="9Xk-Jf-zhM" id="YtH-Du-Emr"/>
                                     <outlet property="titleLabel" destination="6lC-31-JcE" id="TBR-CW-Fkz"/>
+                                    <segue destination="zAi-UZ-VST" kind="custom" identifier="mapa" customClass="SWRevealViewControllerSeguePushController" id="Dxb-ZG-gdj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -127,7 +128,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zAi-UZ-VST" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eZI-ge-iLf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eZI-ge-iLf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -144,4 +145,7 @@
     <resources>
         <image name="Menu Filled-50" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dxb-ZG-gdj"/>
+    </inferredMetricsTieBreakers>
 </document>
