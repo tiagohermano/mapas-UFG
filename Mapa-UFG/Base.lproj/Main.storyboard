@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KYa-L1-TUq">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KYa-L1-TUq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzm-AJ-qud" id="CmV-8h-G4n">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Xk-Jf-zhM">
@@ -50,7 +50,7 @@
                                 <connections>
                                     <outlet property="iconImageView" destination="9Xk-Jf-zhM" id="YtH-Du-Emr"/>
                                     <outlet property="titleLabel" destination="6lC-31-JcE" id="TBR-CW-Fkz"/>
-                                    <segue destination="zAi-UZ-VST" kind="custom" identifier="mapa" customClass="SWRevealViewControllerSeguePushController" id="Dxb-ZG-gdj"/>
+                                    <segue destination="zAi-UZ-VST" kind="custom" identifier="mapa" customClass="SWRevealViewControllerSeguePushController" id="rDb-ZB-Vlt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,7 +68,7 @@
         <!--Campus Samambaia-->
         <scene sceneID="zhc-eL-tYx">
             <objects>
-                <viewController id="5ly-ID-H7I" customClass="MainViewController" customModule="Mapa_UFG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5ly-ID-H7I" customClass="MainViewController" customModule="Mapa_UFG" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sNO-PB-9g3"/>
                         <viewControllerLayoutGuide type="bottom" id="6ZO-0H-URC"/>
@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXH-JQ-fph" userLabel="GoogleMap" customClass="Map" customModule="Mapa_UFG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -128,7 +128,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zAi-UZ-VST" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eZI-ge-iLf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eZI-ge-iLf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -146,6 +146,6 @@
         <image name="Menu Filled-50" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dxb-ZG-gdj"/>
+        <segue reference="rDb-ZB-Vlt"/>
     </inferredMetricsTieBreakers>
 </document>

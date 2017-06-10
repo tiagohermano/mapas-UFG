@@ -14,8 +14,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var selectedCategory: String?
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.isHidden = false
         
         sideMenu()
         
@@ -24,13 +31,15 @@ class MainViewController: UIViewController {
         let campusSamambaia = CLLocation.init(latitude: -16.6021102, longitude: -49.2656253)
         let mapView = map.setInitialMap(location: campusSamambaia)
         
-        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
-        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "PLACEHOLDERS-1"))
-        marker.map = mapView
+//        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
+//        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "PLACEHOLDERS-1"))
+//        marker.map = mapView
         
-        map.drawPath(destination: reuni)
+//        map.drawPath(destination: reuni)
         
         view = mapView
+        
+        print("Categoria Selecionada: \(self.selectedCategory)")
         
 //        let mapView = Map.setInitialMap()
 //        view = mapView

@@ -22,8 +22,7 @@ class Map: GMSMapView {
     var selectedCategory: String!
     
     func setInitialMap(location: CLLocation) -> GMSMapView {
-//        mapCamera = GMSCameraPosition.camera(withLatitude: -16.6021102, longitude: -49.2656253, zoom: 16)
-        mapCamera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 18)
+        mapCamera = GMSCameraPosition.camera(withLatitude: -16.605961, longitude:  -49.262723, zoom: 14.8)
         mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera!)
         
         configMapViewSettings()

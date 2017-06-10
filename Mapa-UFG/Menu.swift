@@ -13,6 +13,10 @@ class Menu: UITableViewController {
     var itensMenu: [String] = ["Lanchonetes", "Xerox", "Restaurantes", "Bibliotecas", "Centros de Aulas"]
     var itensImage: [UIImage] = [#imageLiteral(resourceName: "menu_lanchonete"), #imageLiteral(resourceName: "menu_xerox"), #imageLiteral(resourceName: "menu_restaurante"), #imageLiteral(resourceName: "menu_biblioteca"), #imageLiteral(resourceName: "menu_centro_aulas")]
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -33,12 +37,14 @@ class Menu: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "mapa" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let categoriaSelecionada = self.itensMenu[indexPath.row]
-//                let viewControllerDestino = segue.destination as! Map
-//                viewControllerDestino.selectedCategory = categoriaSelecionada
-//            }
-//        }
+        
+        if segue.identifier == "mapa" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let categoriaSelecionada = self.itensMenu[indexPath.row]
+                let nav = segue.destination as! UINavigationController
+                let viewControllerDestino = nav.topViewController as! MainViewController
+                viewControllerDestino.selectedCategory = categoriaSelecionada
+            }
+        }
     }
 }
