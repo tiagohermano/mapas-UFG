@@ -12,18 +12,11 @@ import GoogleMaps
 class MainViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    var selectedCategory: String?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-    }
-    
+    var selectedCategory = "Nenhuma"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBar.isHidden = false
-        
+    
         sideMenu()
         
         let map = Map()
