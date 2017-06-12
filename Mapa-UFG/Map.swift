@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
@@ -18,7 +17,7 @@ class Map: GMSMapView {
     var mapView: GMSMapView!
     var mapCamera: GMSCameraPosition!
     var locationManager: CLLocationManager!
-    var userLocation: CLLocation!
+    var userLocation: CLLocation?
     var selectedCategory: String!
     
     func setInitialMap(location: CLLocation) -> GMSMapView {
@@ -71,10 +70,13 @@ class Map: GMSMapView {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.userLocation = locations.last!
-        print("Localizacao usuario: \(userLocation)")
+        
+        if let localizacaoUsuario = userLocation {
+            print("Localizacao usuario: \(localizacaoUsuario)")
+        }
         
         // Exibe local
-        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude)
+        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(userLocation!.coordinate.latitude, userLocation!.coordinate.longitude)
         
         // Monta Exibição do mapa
         self.mapCamera = GMSCameraPosition.camera(withLatitude: localizacao.latitude, longitude: localizacao.longitude, zoom: 18)
@@ -117,7 +119,9 @@ class Map: GMSMapView {
     
     func drawPath(destination: CLLocationCoordinate2D) {
 //        let origin = "-16.6021102,-49.2656253"
-        let origin = "\(userLocation?.coordinate.latitude),\(mapView.myLocation?.coordinate.longitude)"
+        
+        let origin = "\(userLocation?.coordinate.latitude),\(userLocation?.coordinate.longitude)"
+        
         let endLocation = "\(destination.latitude),\(destination.longitude)"
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -149,18 +153,6 @@ class Map: GMSMapView {
         }
     }
     
-    func setMarkers(categoria: String) {
-        switch categoria {
-            case "Lanconetes": break
-                // CRIAR MARCADORES DE LANCONETES
-//            let marcador = marker.init(nome: "Reuni", descricao: "Lanconete", localizacao: CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894))
-            
-            
-        default:
-            break
-        }
-    }
-
 }
 
 extension Map: MKMapViewDelegate, CLLocationManagerDelegate, GMSMapViewDelegate {

@@ -13,9 +13,9 @@ import SwiftyJSON
 class MainViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    var selectedCategory = "Nenhuma"
+    var selectedCategory:String?
     
-    enum CategoriaSelecionada {
+    public enum CategoriaSelecionada {
         case Lanchonetes, Xerox, Restaurantes, Bibliotecas, CentrosAulas
     }
     
@@ -36,8 +36,12 @@ class MainViewController: UIViewController {
 //        map.drawPath(destination: reuni)
         
         view = mapView
+        map.isMyLocationEnabled = true
+        print("LOCALIZACAO: \(map.myLocation)")
         
-        print("Categoria Selecionada: \(self.selectedCategory)")
+        if let categoriaSelecionada = selectedCategory {
+            print("Categoria Selecionada: \(categoriaSelecionada)")
+        }
         
         if let jsonPath = Bundle.main.path(forResource: "Locais", ofType: "json") {
             do {
@@ -46,13 +50,34 @@ class MainViewController: UIViewController {
                 if jsonObj != JSON.null {
                     print("jsonData:\(jsonObj)")
                     
-                    let lanchonetes = jsonObj["lanchonetes"]
-                    let xerox = jsonObj["xerox"]
-                    let restaurantes = jsonObj["restaurantes"]
-                    let bibliotecas = jsonObj["bibliotecas"]
-                    let centro_aulas = jsonObj["centros de aulas"]
-                    
-                    
+                    let marcadores = Marker()
+
+                    if let categoriaSelecionada = selectedCategory {
+                        switch categoriaSelecionada {
+                        case "Lanchonetes" :
+                            let lanchonetes = jsonObj["lanchonetes"]
+                            marcadores.createMarkers(locais: lanchonetes, categoria: "lanchonetes")
+                            break
+                        case "Xerox" :
+                            let xerox = jsonObj["xerox"]
+                            marcadores.createMarkers(locais: xerox, categoria: "xerox")
+                            break
+                        case "Restaurantes" :
+                            let restaurantes = jsonObj["restaurantes"]
+                            marcadores.createMarkers(locais: restaurantes, categoria: "restaurantes")
+                            break
+                        case "Bibliotecas" :
+                            let bibliotecas = jsonObj["bibliotecas"]
+                            marcadores.createMarkers(locais: bibliotecas, categoria: "bibliotecas")
+                            break
+                        case "Centro de aulas" :
+                            let centro_aulas = jsonObj["centros de aulas"]
+                            marcadores.createMarkers(locais: centro_aulas, categoria: "centro_aulas")
+                            break
+                        default:
+                            break
+                        }
+                    }
                     
                 } else {
                     print("Could not get json from file, make sure that file contains valid json.")
@@ -63,28 +88,6 @@ class MainViewController: UIViewController {
         } else {
             print("Invalid Filename/path")
         }
-        
-        switch selectedCategory {
-        case "Lanchonetes":
-            // Mostrar Lanchonetes
-            break
-        case "Xerox":
-            //Mostar Xerox
-            break
-        case "Restaurantes":
-            //Mostrar Restaurantes
-            break
-        case "Bibliotecas":
-            //Mostrar Bibliotecas
-            break
-        case "Centros de Aulas":
-            //Mostrar Centros de Aulas
-            break
-        default: break
-            //Mostrar nada
-        }
-        
-        
         
 //        let mapView = Map.setInitialMap()
 //        view = mapView
