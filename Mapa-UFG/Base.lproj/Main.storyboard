@@ -78,7 +78,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXH-JQ-fph" userLabel="GoogleMap" customClass="Map" customModule="Mapa_UFG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ua-wN-LsO">
+                                        <rect key="frame" x="167" y="504" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.28311129139516095" green="0.54843565182035547" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <state key="normal" title="M">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="laO-Gv-bxR" kind="show" id="ZZz-Rb-SXx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -94,12 +108,46 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu Filled-50" id="LIE-nI-P2q"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="circularMenuButton" destination="2ua-wN-LsO" id="mtR-iD-hjY"/>
+                        <outlet property="googleMap" destination="zXH-JQ-fph" id="aV2-ir-YdR"/>
                         <outlet property="menuButton" destination="LIE-nI-P2q" id="4mk-Le-P6E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYS-eI-BLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="841.52923538230891"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="cow-5J-deG">
+            <objects>
+                <viewController id="laO-Gv-bxR" customClass="SecondViewController" customModule="Mapa_UFG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K7Z-aw-Ds9"/>
+                        <viewControllerLayoutGuide type="bottom" id="32t-gu-V0I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uuL-wH-rMX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t67-Aa-Prg">
+                                <rect key="frame" x="167" y="566" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.28235294117647058" green="0.5490196078431373" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28311129140000002" green="0.54843565179999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="t67-Aa-Prg" id="odU-vk-LpC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bO4-6B-UcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776" y="844"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Nci-BA-Cy1">

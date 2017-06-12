@@ -11,6 +11,8 @@ import GoogleMaps
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var googleMap: Map!
+    @IBOutlet weak var circularMenuButton: UIButton!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var selectedCategory: String?
     
@@ -37,7 +39,7 @@ class MainViewController: UIViewController {
         
 //        map.drawPath(destination: reuni)
         
-        view = mapView
+        view.insertSubview(mapView, at: 1)
         
         print("Categoria Selecionada: \(self.selectedCategory)")
         
