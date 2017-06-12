@@ -30,4 +30,6 @@ class Marker: GMSMarker {
         super.iconView?.frame.size.width = width
     }
     
+    func createrMarkers(json:JSONSerialization) {
+    }
 }
