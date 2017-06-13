@@ -7,13 +7,13 @@
 			"longitude": "-49.2650509"
 		},
 		"Lanchonete Delícias do Campus": {
-			"titulo":"Lanchonte Delícias do Campus",
+			"titulo":"Lanchonete Delícias do Campus",
 			"descrição": "",
 			"latitude": "-16.6042936",
 			"longitude": "-49.2624951"
 		},
 		"Lanchonete do DCE": {
-			"titulo":"Lanchonte do DCE",
+			"titulo":"Lanchonete do DCE",
 			"descrição": "",
 			"latitude": "-16.6042936",
 			"longitude": "-49.2624951"
@@ -24,8 +24,8 @@
 			"latitude": "-16.6017059",
 			"longitude": "-49.2622892"
 		},
-		"Lanchonte UFG": {
-			"titulo": "Lanchonte",
+		"Lanchonete UFG": {
+			"titulo": "Lanchonete",
 			"descrição": "",
 			"latitude": "-16.5982303",
 			"longitude": "-49.2786711"			
@@ -71,10 +71,10 @@
 		}	
 	},
 
-	"centros de aulas": {
+    "centros de aulas": {
 		"Centro de Aulas Aroeira":{
 			"titulo": "Centro de Aulas Aroeira",
-			"descrição": "",
+			"descrição": "teste",
 			"latitude": "-16.6033548",
 			"longitude": "-49.264757"
 		},
@@ -90,7 +90,7 @@
 			"latitude": "-16.6034524",
 			"longitude": "-49.2651647"
 		}	
-	},
+    },
 
 	"bancos/caixas": {
 		"Caixa Econômica":{
