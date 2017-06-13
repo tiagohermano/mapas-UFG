@@ -52,6 +52,10 @@ class Map: GMSMapView {
             
             alertController.show()
         }
+        
+        if status == .authorizedWhenInUse {
+            mapView.isMyLocationEnabled = true
+        }
     }
     
     private func configLocationManager() {

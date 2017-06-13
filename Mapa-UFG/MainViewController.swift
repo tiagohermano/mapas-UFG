@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
                 let data = try Data(contentsOf: URL(fileURLWithPath: jsonPath), options: .alwaysMapped)
                 let jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
-                    print("jsonData:\(jsonObj)")
+//                    print("jsonData:\(jsonObj)")
                     
                     let marcadores = Marker()
 
@@ -57,6 +57,7 @@ class MainViewController: UIViewController {
                         case "Lanchonetes" :
                             let lanchonetes = jsonObj["lanchonetes"]
                             marcadores.createMarkers(locais: lanchonetes, categoria: "lanchonetes")
+                            print(lanchonetes["Lanchonete Reuni"])
                             break
                         case "Xerox" :
                             let xerox = jsonObj["xerox"]
@@ -70,9 +71,10 @@ class MainViewController: UIViewController {
                             let bibliotecas = jsonObj["bibliotecas"]
                             marcadores.createMarkers(locais: bibliotecas, categoria: "bibliotecas")
                             break
-                        case "Centro de aulas" :
+                        case "Centros de Aulas" :
                             let centro_aulas = jsonObj["centros de aulas"]
                             marcadores.createMarkers(locais: centro_aulas, categoria: "centro_aulas")
+                            print("CENTROS DE AULAS \(jsonObj["centros de aulas"])")
                             break
                         default:
                             break

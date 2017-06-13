@@ -46,9 +46,11 @@ class Marker: GMSMarker {
     
     func createMarkers(locais:JSON, categoria:String) {
         let qtdLocais = locais.arrayValue
+        print(locais, qtdLocais)
         for local in qtdLocais {
             let marker = Marker()
-            marker.createMarker(nome: local["titulo"].string!, descricao: locais["descricao"].string!, localizacao: CLLocationCoordinate2D.init(latitude: locais["latitude"].doubleValue, longitude: locais["longitude"].doubleValue), icone: UIImage(named: categoria)!)
+            marker.createMarker(nome: local["titulo"].string!, descricao: local["descrição"].string!, localizacao: CLLocationCoordinate2D.init(latitude: local["latitude"].doubleValue, longitude: local["longitude"].doubleValue), icone: UIImage(named: categoria)!)
+            print("========================\(local)")
             
             markers?.append(marker)
         }
