@@ -44,21 +44,21 @@ class Marker: GMSMarker {
         super.iconView?.frame.size.width = width
     }
     
-    func createMarkers(locais:JSON, categoria:String) {
-        let qtdLocais = locais.arrayValue
-        print(locais, qtdLocais)
-        for local in qtdLocais {
-            let marker = Marker()
-            marker.createMarker(nome: local["titulo"].string!, descricao: local["descrição"].string!, localizacao: CLLocationCoordinate2D.init(latitude: local["latitude"].doubleValue, longitude: local["longitude"].doubleValue), icone: UIImage(named: categoria)!)
-            print("========================\(local)")
+    func createMarkers(locaisCategoria:JSON, categoria:String) {
+//        let qtdLocais = locais.arrayValue
+//        print(locais, qtdLocais)
+        let marker = Marker()
+        for(key, locais):(String, JSON) in locaisCategoria {
+//            print("\(locais["latitude"])")
             
-            markers?.append(marker)
+            marker.createMarker(nome: locais["titulo"].stringValue, descricao: locais["descrição"].stringValue, localizacao: CLLocationCoordinate2D.init(latitude: locais["latitude"].doubleValue, longitude: locais["longitude"].doubleValue), icone: UIImage(named: categoria)!)
         }
-        if let marcadores = markers {
-            for marker in marcadores {
-                let mapa = Map()
-                marker.map = mapa.mapView
-            }
-        }
+        
+//        if let marcadores = markers {
+//            for marker in marcadores {
+//                let mapa = Map()
+//                marker.map = mapa.mapView
+//            }
+//        }
     }
 }

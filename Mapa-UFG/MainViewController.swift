@@ -56,24 +56,24 @@ class MainViewController: UIViewController {
                         switch categoriaSelecionada {
                         case "Lanchonetes" :
                             let lanchonetes = jsonObj["lanchonetes"]
-                            marcadores.createMarkers(locais: lanchonetes, categoria: "lanchonetes")
-                            print(lanchonetes["Lanchonete Reuni"])
+                            marcadores.createMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")
+//                            print(lanchonetes["Lanchonete Reuni"])
                             break
                         case "Xerox" :
                             let xerox = jsonObj["xerox"]
-                            marcadores.createMarkers(locais: xerox, categoria: "xerox")
+                            marcadores.createMarkers(locaisCategoria: xerox, categoria: "xerox")
                             break
                         case "Restaurantes" :
                             let restaurantes = jsonObj["restaurantes"]
-                            marcadores.createMarkers(locais: restaurantes, categoria: "restaurantes")
+                            marcadores.createMarkers(locaisCategoria: restaurantes, categoria: "restaurantes")
                             break
                         case "Bibliotecas" :
                             let bibliotecas = jsonObj["bibliotecas"]
-                            marcadores.createMarkers(locais: bibliotecas, categoria: "bibliotecas")
+                            marcadores.createMarkers(locaisCategoria: bibliotecas, categoria: "bibliotecas")
                             break
                         case "Centros de Aulas" :
                             let centro_aulas = jsonObj["centros de aulas"]
-                            marcadores.createMarkers(locais: centro_aulas, categoria: "centro_aulas")
+                            marcadores.createMarkers(locaisCategoria: centro_aulas, categoria: "centro_aulas")
                             print("CENTROS DE AULAS \(jsonObj["centros de aulas"])")
                             break
                         default:
