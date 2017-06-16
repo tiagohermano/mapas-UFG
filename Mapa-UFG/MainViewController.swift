@@ -10,10 +10,14 @@ import UIKit
 import GoogleMaps
 import SwiftyJSON
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, GMSMapViewDelegate {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var selectedCategory:String?
+    
+    var mapView: GMSMapView?
+    
+    var marcadores:[Marker] = []
     
     public enum CategoriaSelecionada {
         case Lanchonetes, Xerox, Restaurantes, Bibliotecas, CentrosAulas
@@ -27,7 +31,7 @@ class MainViewController: UIViewController {
         let map = Map()
         
         let campusSamambaia = CLLocation.init(latitude: -16.6021102, longitude: -49.2656253)
-        let mapView = map.setInitialMap(location: campusSamambaia)
+        mapView = map.setInitialMap(location: campusSamambaia)
         
 //        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
 //        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "PLACEHOLDERS-1"))
@@ -43,37 +47,46 @@ class MainViewController: UIViewController {
             print("Categoria Selecionada: \(categoriaSelecionada)")
         }
         
+        
+        
+//        let mapView = Map.setInitialMap()
+//        view = mapView
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         if let jsonPath = Bundle.main.path(forResource: "Locais", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: jsonPath), options: .alwaysMapped)
                 let jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
-//                    print("jsonData:\(jsonObj)")
+                    //                    print("jsonData:\(jsonObj)")
                     
-                    let marcadores = Marker()
-
+                    let marker = Marker()
+                    
                     if let categoriaSelecionada = selectedCategory {
                         switch categoriaSelecionada {
                         case "Lanchonetes" :
                             let lanchonetes = jsonObj["lanchonetes"]
-                            marcadores.createMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")
-//                            print(lanchonetes["Lanchonete Reuni"])
+                            marcadores = marker.getMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")
+                            //                            print(lanchonetes["Lanchonete Reuni"])
                             break
                         case "Xerox" :
                             let xerox = jsonObj["xerox"]
-                            marcadores.createMarkers(locaisCategoria: xerox, categoria: "xerox")
+                            marcadores = marker.getMarkers(locaisCategoria: xerox, categoria: "xerox")
                             break
                         case "Restaurantes" :
                             let restaurantes = jsonObj["restaurantes"]
-                            marcadores.createMarkers(locaisCategoria: restaurantes, categoria: "restaurantes")
+                            marcadores = marker.getMarkers(locaisCategoria: restaurantes, categoria: "restaurantes")
                             break
                         case "Bibliotecas" :
                             let bibliotecas = jsonObj["bibliotecas"]
-                            marcadores.createMarkers(locaisCategoria: bibliotecas, categoria: "bibliotecas")
+                            marcadores = marker.getMarkers(locaisCategoria: bibliotecas, categoria: "bibliotecas")
                             break
                         case "Centros de Aulas" :
                             let centro_aulas = jsonObj["centros de aulas"]
-                            marcadores.createMarkers(locaisCategoria: centro_aulas, categoria: "centro_aulas")
+                            marcadores = marker.getMarkers(locaisCategoria: centro_aulas, categoria: "centro_aulas")
                             print("CENTROS DE AULAS \(jsonObj["centros de aulas"])")
                             break
                         default:
@@ -91,9 +104,15 @@ class MainViewController: UIViewController {
             print("Invalid Filename/path")
         }
         
-//        let mapView = Map.setInitialMap()
-//        view = mapView
-        // Do any additional setup after loading the view, typically from a nib.
+        let mapCamera = GMSCameraPosition.camera(withLatitude: -16.605961, longitude:  -49.262723, zoom: 14.8)
+        mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera)
+        mapView?.delegate = self
+        
+        for marcador in marcadores {
+            print("MARCADOR: \(marcador)")
+            marcador.map = mapView
+        }
+        view = mapView
     }
     
     func sideMenu() {
@@ -106,7 +125,6 @@ class MainViewController: UIViewController {
         }
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

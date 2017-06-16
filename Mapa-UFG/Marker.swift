@@ -44,7 +44,7 @@ class Marker: GMSMarker {
         super.iconView?.frame.size.width = width
     }
     
-    func createMarkers(locaisCategoria:JSON, categoria:String) {
+    func getMarkers(locaisCategoria:JSON, categoria:String) -> [Marker] {
 
         let marker = Marker()
         for(key, locais):(String, JSON) in locaisCategoria {
@@ -53,10 +53,11 @@ class Marker: GMSMarker {
             markers.append(marker)
         }
         
-        let mapa = Map()
-        for marker in markers {
-            print("MARCADOR: \(marker)")
-            marker.map = mapa.mapView
-        }
+//        let mapa = Map()
+//        for marker in Marker.markers {
+//            print("MARCADOR: \(marker)")
+//            marker.map = mapa.mapView
+//        }
+        return markers
     }
 }
