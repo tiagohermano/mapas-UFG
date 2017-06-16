@@ -2,31 +2,31 @@
 	"lanchonetes": {
 		"Lanchonete Reuni": {
 			"titulo": "Lanchonete Reuni",
-			"descrição": "",
+			"descrição": "teste",
 			"latitude": -16.603975,
 			"longitude": -49.2650509
 		},
 		"Lanchonete Delícias do Campus": {
 			"titulo":"Lanchonete Delícias do Campus",
-			"descrição": "",
+			"descrição": "teste",
 			"latitude": -16.6042936,
 			"longitude": -49.2624951
 		},
 		"Lanchonete do DCE": {
 			"titulo":"Lanchonete do DCE",
-			"descrição": "",
+			"descrição": "teste",
 			"latitude": -16.6042936,
 			"longitude": -49.2624951
 		},
 		"Restaurante Universitário": {
 			"titulo": "Restaurante Universitário",
-			"descrição": "",
+			"descrição": "teste",
 			"latitude": -16.6017059,
 			"longitude": -49.2622892
 		},
 		"Lanchonete UFG": {
-			"titulo": "Lanchonete",
-			"descrição": "",
+			"titulo": "Lanchonete UFG",
+			"descrição": "teste",
 			"latitude": -16.5982303,
 			"longitude": -49.2786711			
 		}

@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class Marker: GMSMarker {
     
-    var markers:[Marker]?
+    var markers:[Marker] = []
     
 //    init(nome: String, descricao: String, localizacao: CLLocationCoordinate2D, icone: UIImage) {
 //        super.init()
@@ -45,20 +45,18 @@ class Marker: GMSMarker {
     }
     
     func createMarkers(locaisCategoria:JSON, categoria:String) {
-//        let qtdLocais = locais.arrayValue
-//        print(locais, qtdLocais)
+
         let marker = Marker()
         for(key, locais):(String, JSON) in locaisCategoria {
-//            print("\(locais["latitude"])")
-            
-            marker.createMarker(nome: locais["titulo"].stringValue, descricao: locais["descrição"].stringValue, localizacao: CLLocationCoordinate2D.init(latitude: locais["latitude"].doubleValue, longitude: locais["longitude"].doubleValue), icone: UIImage(named: categoria)!)
+
+            marker.createMarker(nome: locais["titulo"].stringValue, descricao: locais["descrição"].stringValue, localizacao: CLLocationCoordinate2D.init(latitude: locais["latitude"].doubleValue, longitude: locais["longitude"].doubleValue), icone: UIImage(named: "PLACEHOLDERS-1")!)
+            markers.append(marker)
         }
         
-//        if let marcadores = markers {
-//            for marker in marcadores {
-//                let mapa = Map()
-//                marker.map = mapa.mapView
-//            }
-//        }
+        let mapa = Map()
+        for marker in markers {
+            print("MARCADOR: \(marker)")
+            marker.map = mapa.mapView
+        }
     }
 }
