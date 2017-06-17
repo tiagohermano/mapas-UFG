@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class Marker: GMSMarker {
     
-    var markers:[Marker] = []
+    var markers:[Marker]?
     
 //    init(nome: String, descricao: String, localizacao: CLLocationCoordinate2D, icone: UIImage) {
 //        super.init()
@@ -36,21 +36,22 @@ class Marker: GMSMarker {
         icon = icone
         appearAnimation = .pop
         
-        setIconSize(height: 40, width: 40)
+//        setIconSize(height: 40, width: 40)
     }
 
-    private func setIconSize(height: CGFloat, width: CGFloat) {
-        super.iconView?.frame.size.height = height
-        super.iconView?.frame.size.width = width
-    }
+//    private func setIconSize(height: CGFloat, width: CGFloat) {
+//        super.iconView?.frame.size.height = height
+//        super.iconView?.frame.size.width = width
+//    }
     
     func getMarkers(locaisCategoria:JSON, categoria:String) -> [Marker] {
-
-        let marker = Marker()
-        for(key, locais):(String, JSON) in locaisCategoria {
-
-            marker.createMarker(nome: locais["titulo"].stringValue, descricao: locais["descrição"].stringValue, localizacao: CLLocationCoordinate2D.init(latitude: locais["latitude"].doubleValue, longitude: locais["longitude"].doubleValue), icone: UIImage(named: "PLACEHOLDERS-1")!)
-            markers.append(marker)
+        markers = []
+        for(_, locais):(String, JSON) in locaisCategoria {
+            let marker = Marker()
+            marker.createMarker(nome: locais["titulo"].stringValue, descricao: locais["descrição"].stringValue, localizacao: CLLocationCoordinate2D.init(latitude: locais["latitude"].doubleValue, longitude: locais["longitude"].doubleValue), icone: UIImage(named: "placeholder_\(categoria)")!)
+                markers!.append(marker)
+            
+            print("LOCAIS:\(markers!)")
         }
         
 //        let mapa = Map()
@@ -58,6 +59,6 @@ class Marker: GMSMarker {
 //            print("MARCADOR: \(marker)")
 //            marker.map = mapa.mapView
 //        }
-        return markers
+        return markers!
     }
 }

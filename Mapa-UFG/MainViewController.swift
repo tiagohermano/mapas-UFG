@@ -19,10 +19,6 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     
     var marcadores:[Marker] = []
     
-    public enum CategoriaSelecionada {
-        case Lanchonetes, Xerox, Restaurantes, Bibliotecas, CentrosAulas
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -47,22 +43,15 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
             print("Categoria Selecionada: \(categoriaSelecionada)")
         }
         
-        
-        
-//        let mapView = Map.setInitialMap()
-//        view = mapView
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        let mapCamera = GMSCameraPosition.camera(withLatitude: -16.605961, longitude:  -49.262723, zoom: 14.6)
+        mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera)
+        mapView?.delegate = self
         
         if let jsonPath = Bundle.main.path(forResource: "Locais", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: jsonPath), options: .alwaysMapped)
                 let jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
-                    //                    print("jsonData:\(jsonObj)")
-                    
                     let marker = Marker()
                     
                     if let categoriaSelecionada = selectedCategory {
@@ -70,7 +59,6 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
                         case "Lanchonetes" :
                             let lanchonetes = jsonObj["lanchonetes"]
                             marcadores = marker.getMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")
-                            //                            print(lanchonetes["Lanchonete Reuni"])
                             break
                         case "Xerox" :
                             let xerox = jsonObj["xerox"]
@@ -86,12 +74,17 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
                             break
                         case "Centros de Aulas" :
                             let centro_aulas = jsonObj["centros de aulas"]
-                            marcadores = marker.getMarkers(locaisCategoria: centro_aulas, categoria: "centro_aulas")
+                            marcadores = marker.getMarkers(locaisCategoria: centro_aulas, categoria: "centros_aulas")
                             print("CENTROS DE AULAS \(jsonObj["centros de aulas"])")
                             break
                         default:
                             break
                         }
+                        
+                        for marcador in marcadores {
+                            marcador.map = mapView
+                        }
+                        view = mapView
                     }
                     
                 } else {
@@ -104,15 +97,9 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
             print("Invalid Filename/path")
         }
         
-        let mapCamera = GMSCameraPosition.camera(withLatitude: -16.605961, longitude:  -49.262723, zoom: 14.8)
-        mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera)
-        mapView?.delegate = self
-        
-        for marcador in marcadores {
-            print("MARCADOR: \(marcador)")
-            marcador.map = mapView
-        }
-        view = mapView
+//        let mapView = Map.setInitialMap()
+//        view = mapView
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func sideMenu() {
