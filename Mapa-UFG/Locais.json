@@ -74,40 +74,40 @@
     "centros de aulas": {
 		"Centro de Aulas Aroeira":{
 			"titulo": "Centro de Aulas Aroeira",
-			"descrição": "teste",
+			"descrição": "Também conhecido como CA A",
 			"latitude": "-16.6033548",
 			"longitude": "-49.264757"
 		},
 		"Centro de Aulas Baru":{
 			"titulo": "Centro de Aulas Baru",
-			"descrição": "",
+			"descrição": "Também conhecido como CA B",
 			"latitude": "-16.6034524",
 			"longitude": "-49.2651647"
 		},
 		"Centro de Aulas Caraíbas":{
 			"titulo": "Centro de Aulas Caraíbas",
-			"descrição": "",
+			"descrição": "Também conhecido como CA C",
 			"latitude": "-16.6034524",
 			"longitude": "-49.2651647"
 		}	
     },
 
-	"bancos/caixas": {
+	"bancos": {
 		"Caixa Econômica":{
 			"titulo":"Caixa Econômica",
-			"descrição": "",
+			"descrição": "Agência e Caixa Eletrônico",
 			"latitude": "-16.6022247",
 			"longitude": "-49.2622217"
 		},
 		"Banco do Brasil": {
 			"titulo":"Banco do Brasil",
-			"descrição": "",
+			"descrição": "Agência e Caixa Eletrônico",
 			"latitude": "-16.6036462",
 			"longitude": "-49.2605224"
 		},
 		"Caixa Eletrônico BB": {
-			"titulo": "Caixa Eletrônico do Banco do Brasil",
-			"descrição": "",
+			"titulo": "Banco do Brasil",
+			"descrição": "Caixa Eletrônico",
 			"latitude": "-16.6067719",
 			"longitude": "-49.2595437"
 		}
