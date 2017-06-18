@@ -21,12 +21,11 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         sideMenu()
         
-        let map = Map()
-        
         let campusSamambaia = CLLocation.init(latitude: -16.6021102, longitude: -49.2656253)
+        
+        let map = Map()
         mapView = map.setInitialMap(location: campusSamambaia)
         
 //        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
@@ -43,7 +42,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
             print("Categoria Selecionada: \(categoriaSelecionada)")
         }
         
-        let mapCamera = GMSCameraPosition.camera(withLatitude: -16.605961, longitude:  -49.262723, zoom: 14.6)
+        let mapCamera = Map.defaultMapCamera
         mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera)
         mapView?.delegate = self
         
@@ -52,30 +51,33 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
                 let data = try Data(contentsOf: URL(fileURLWithPath: jsonPath), options: .alwaysMapped)
                 let jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
-                    let marker = Marker()
+                    let locais = Marker()
                     
                     if let categoriaSelecionada = selectedCategory {
                         switch categoriaSelecionada {
                         case "Lanchonetes" :
                             let lanchonetes = jsonObj["lanchonetes"]
-                            marcadores = marker.getMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")
+                            marcadores = locais.getMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")
                             break
                         case "Xerox" :
                             let xerox = jsonObj["xerox"]
-                            marcadores = marker.getMarkers(locaisCategoria: xerox, categoria: "xerox")
+                            marcadores = locais.getMarkers(locaisCategoria: xerox, categoria: "xerox")
                             break
                         case "Restaurantes" :
                             let restaurantes = jsonObj["restaurantes"]
-                            marcadores = marker.getMarkers(locaisCategoria: restaurantes, categoria: "restaurantes")
+                            marcadores = locais.getMarkers(locaisCategoria: restaurantes, categoria: "restaurantes")
                             break
                         case "Bibliotecas" :
                             let bibliotecas = jsonObj["bibliotecas"]
-                            marcadores = marker.getMarkers(locaisCategoria: bibliotecas, categoria: "bibliotecas")
+                            marcadores = locais.getMarkers(locaisCategoria: bibliotecas, categoria: "bibliotecas")
                             break
                         case "Centros de Aulas" :
                             let centro_aulas = jsonObj["centros de aulas"]
-                            marcadores = marker.getMarkers(locaisCategoria: centro_aulas, categoria: "centros_aulas")
-                            print("CENTROS DE AULAS \(jsonObj["centros de aulas"])")
+                            marcadores = locais.getMarkers(locaisCategoria: centro_aulas, categoria: "centros_aulas")
+                            break
+                        case "Bancos" :
+                            let bancos = jsonObj["bancos"]
+                            marcadores = locais.getMarkers(locaisCategoria: bancos, categoria: "bancos")
                             break
                         default:
                             break
