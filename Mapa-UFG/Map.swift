@@ -22,7 +22,7 @@ class Map: GMSMapView {
     
     static var defaultMapCamera = GMSCameraPosition.camera(withLatitude: -16.605961, longitude:  -49.262723, zoom: 14.6)
     
-    func setInitialMap(location: CLLocation) -> GMSMapView {
+    func setInitialMap() -> GMSMapView {
         mapCamera = Map.defaultMapCamera
         mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera!)
         
@@ -60,14 +60,14 @@ class Map: GMSMapView {
         }
     }
     
-    private func configLocationManager() {
+    func configLocationManager() {
         self.locationManager?.delegate = self
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager?.requestWhenInUseAuthorization()
         self.locationManager?.startUpdatingLocation()
     }
     
-    private func configMapViewSettings() {
+    func configMapViewSettings() {
         mapView?.settings.compassButton = true
         mapView?.isMyLocationEnabled = true
         mapView?.isBuildingsEnabled = true
@@ -105,7 +105,22 @@ class Map: GMSMapView {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.mapView.isMyLocationEnabled = true
-        return false
+        showDirectionsButton()
+        
+        return true
+    }
+    
+    func showDirectionsButton() {
+        let frame = CGRect(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.minY - 40, width: 60, height: 60)
+        let button = UIButton(frame: frame)
+        
+        button.backgroundColor = .blue
+        
+        button.layer.cornerRadius = button.bounds.size.width / 2
+        button.clipsToBounds = true
+        
+        mapView.addSubview(button)
+        
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {

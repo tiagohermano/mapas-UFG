@@ -19,14 +19,24 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     
     var marcadores:[Marker] = []
     
+    static var mainView:UIView?
+    
+    enum Categories {
+        case Lanchonetes, Xerox, Restaurantes, Bibliotecas, Centros_aulas, Bancos
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu()
         
-        let campusSamambaia = CLLocation.init(latitude: -16.6021102, longitude: -49.2656253)
+        MainViewController.mainView = view
+        
         
         let map = Map()
-        mapView = map.setInitialMap(location: campusSamambaia)
+        mapView?.delegate = self
+        
+        mapView = map.setInitialMap()
         
 //        let reuni = CLLocationCoordinate2D(latitude: -16.6035343, longitude: -49.2664894)
 //        let marker = Marker(nome: "Reuni", descricao: "Lanchonete", localizacao: reuni, icone: #imageLiteral(resourceName: "PLACEHOLDERS-1"))
@@ -35,18 +45,29 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
 //        map.drawPath(destination: reuni)
         
         view = mapView
-        map.isMyLocationEnabled = true
-        print("LOCALIZACAO: \(map.myLocation)")
         
         if let categoriaSelecionada = selectedCategory {
             print("Categoria Selecionada: \(categoriaSelecionada)")
         }
+    
+        showMarkers(selectedCategory)
         
-        let mapCamera = Map.defaultMapCamera
-        mapView = GMSMapView.map(withFrame: .zero, camera: mapCamera)
-        mapView?.delegate = self
+//        let mapView = Map.setInitialMap()
+//        view = mapView
+    }
+    
+    func showMarkers(_ selectedCategory:String?) {
+        let markers = getMarkersFromJSON(JSONfile: "Locais", selectedCategory)
         
-        if let jsonPath = Bundle.main.path(forResource: "Locais", ofType: "json") {
+        for marker in markers {
+            marker.map = mapView
+        }
+        
+        view = mapView
+    }
+    
+    func getMarkersFromJSON(JSONfile:String, _ selectedCategory:String?) -> [Marker] {
+        if let jsonPath = Bundle.main.path(forResource: JSONfile, ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: jsonPath), options: .alwaysMapped)
                 let jsonObj = JSON(data: data)
@@ -82,11 +103,6 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
                         default:
                             break
                         }
-                        
-                        for marcador in marcadores {
-                            marcador.map = mapView
-                        }
-                        view = mapView
                     }
                     
                 } else {
@@ -98,10 +114,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         } else {
             print("Invalid Filename/path")
         }
-        
-//        let mapView = Map.setInitialMap()
-//        view = mapView
-        // Do any additional setup after loading the view, typically from a nib.
+        return marcadores
     }
     
     func sideMenu() {
