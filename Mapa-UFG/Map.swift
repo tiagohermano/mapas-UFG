@@ -105,6 +105,9 @@ class Map: GMSMapView {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.mapView.isMyLocationEnabled = true
+        
+        
+        
         showDirectionsButton()
         
         return true
