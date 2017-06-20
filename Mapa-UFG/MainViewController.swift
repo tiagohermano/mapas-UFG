@@ -79,27 +79,21 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
                         case "Lanchonetes" :
                             let lanchonetes = jsonObj["lanchonetes"]
                             marcadores = locais.getMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")
-                            break
                         case "Xerox" :
                             let xerox = jsonObj["xerox"]
                             marcadores = locais.getMarkers(locaisCategoria: xerox, categoria: "xerox")
-                            break
                         case "Restaurantes" :
                             let restaurantes = jsonObj["restaurantes"]
                             marcadores = locais.getMarkers(locaisCategoria: restaurantes, categoria: "restaurantes")
-                            break
                         case "Bibliotecas" :
                             let bibliotecas = jsonObj["bibliotecas"]
                             marcadores = locais.getMarkers(locaisCategoria: bibliotecas, categoria: "bibliotecas")
-                            break
                         case "Centros de Aulas" :
                             let centro_aulas = jsonObj["centros de aulas"]
                             marcadores = locais.getMarkers(locaisCategoria: centro_aulas, categoria: "centros_aulas")
-                            break
                         case "Bancos" :
                             let bancos = jsonObj["bancos"]
                             marcadores = locais.getMarkers(locaisCategoria: bancos, categoria: "bancos")
-                            break
                         default:
                             break
                         }
