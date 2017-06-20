@@ -13,7 +13,7 @@ import SwiftyJSON
 import Alamofire
 import MapKit
 
-class Map: GMSMapView {
+class Map: GMSMapView, GMSMapViewDelegate {
     var mapView: GMSMapView!
     var mapCamera: GMSCameraPosition!
     var locationManager: CLLocationManager!
@@ -65,6 +65,7 @@ class Map: GMSMapView {
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager?.requestWhenInUseAuthorization()
         self.locationManager?.startUpdatingLocation()
+        self.locationManager?.startMonitoringSignificantLocationChanges()
     }
     
     func configMapViewSettings() {
@@ -73,6 +74,8 @@ class Map: GMSMapView {
         mapView?.isBuildingsEnabled = true
         mapView?.settings.myLocationButton = true
     }
+    
+    // MARK: - CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.userLocation = locations.last!
@@ -106,6 +109,8 @@ class Map: GMSMapView {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.mapView.isMyLocationEnabled = true
         showDirectionsButton()
+        
+        print("MARCADOR TOCADO")
         
         return true
     }
@@ -176,7 +181,7 @@ class Map: GMSMapView {
     
 }
 
-extension Map: MKMapViewDelegate, CLLocationManagerDelegate, GMSMapViewDelegate {
+extension Map: MKMapViewDelegate, CLLocationManagerDelegate {
     
 }
 
