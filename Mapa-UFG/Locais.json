@@ -30,14 +30,14 @@
 		"Copiadora Draco": {
 			"titulo": "Copiadora Draco",
 			"descrição": "Copiadora do Diretorio Acadêmico da Computação",
-			"latitude": "-16.6037409",
-			"longitude": "-49.2659903"
+			"latitude": -16.6037409,
+			"longitude": -49.2659903
 		},
 		"Goiás Cópias":{
 			"titulo": "Goiás Cópias",
 			"descrição": "",
-			"latitude": "-16.6030724",
-			"longitude": "-49.2637093"
+			"latitude": -16.6030724,
+			"longitude": -49.2637093
 		}
 	},
 
@@ -51,14 +51,14 @@
 		"Restaurante Dona Fátima":{
 			"titulo": "Restaurante Dona Fátima",
 			"descrição": "",
-			"latitude": "-16.6015671",
-			"longitude": "-16.6015671"	
+			"latitude": -16.6015671,
+			"longitude": -16.6015671
 		},
 		"Restaurante do Meio do Caminho": {
 			"titulo": "Restaurante do Meio do Caminho",
 			"descrição": "",
-			"latitude": "-16.6019492",
-			"longitude": "-49.2697186"	
+			"latitude": -16.6019492,
+			"longitude": -49.2697186
 		}
 	},
 
@@ -66,8 +66,8 @@
 		"Biblioteca Central":{
 			"titulo": "Biblioteca Central Prof. Alpheu da Veiga Jardim",
 			"descrição": "",
-			"latitude": "-16.6054025",
-			"longitude": "-49.2607847"
+			"latitude": -16.6054025,
+			"longitude": -49.2607847
 		}	
 	},
 
@@ -75,20 +75,20 @@
 		"Centro de Aulas Aroeira":{
 			"titulo": "Centro de Aulas Aroeira",
 			"descrição": "Também conhecido como CA A",
-			"latitude": "-16.6033548",
-			"longitude": "-49.264757"
+			"latitude": -16.6042123,
+			"longitude": -49.266888
 		},
 		"Centro de Aulas Baru":{
 			"titulo": "Centro de Aulas Baru",
 			"descrição": "Também conhecido como CA B",
-			"latitude": "-16.6034524",
-			"longitude": "-49.2651647"
+			"latitude": -16.6031532,
+			"longitude": -49.2680182
 		},
 		"Centro de Aulas Caraíbas":{
 			"titulo": "Centro de Aulas Caraíbas",
 			"descrição": "Também conhecido como CA C",
-			"latitude": "-16.6034524",
-			"longitude": "-49.2651647"
+			"latitude": -16.6042123,
+			"longitude": -49.266888
 		}	
     },
 
@@ -96,113 +96,113 @@
 		"Caixa Econômica":{
 			"titulo":"Caixa Econômica",
 			"descrição": "Agência e Caixa Eletrônico",
-			"latitude": "-16.6022247",
-			"longitude": "-49.2622217"
+			"latitude": -16.6022247,
+			"longitude": -49.2622217
 		},
 		"Banco do Brasil": {
 			"titulo":"Banco do Brasil",
 			"descrição": "Agência e Caixa Eletrônico",
-			"latitude": "-16.6036462",
-			"longitude": "-49.2605224"
+			"latitude": -16.6036462,
+			"longitude": -49.2605224
 		},
 		"Caixa Eletrônico BB": {
 			"titulo": "Banco do Brasil",
 			"descrição": "Caixa Eletrônico",
-			"latitude": "-16.6067719",
-			"longitude": "-49.2595437"
+			"latitude": -16.6067719,
+			"longitude": -49.2595437
 		}
 	},
 
-	"institutos/faculdades": {
+	"institutos": {
 		"Instituto de Informática":{
 			"titulo": "Instituto de Informática",
 			"descrição": "",
-			"latitude": "-16.6044584",
-			"longitude": "-49.2669766"
+			"latitude": -16.6044584,
+			"longitude": -49.2669766
 		},
 		"Faculdade de Educação Física e Dança":{
 			"titulo": "Faculdade de Educação Física e Dança",
 			"descrição": "",
-			"latitude": "-16.6057323",
-			"longitude": "-49.2695908"
+			"latitude": -16.6057323,
+			"longitude": -49.2695908
 		},
 		"Faculdade de Filosofia":{
 			"titulo": "Faculdade de Filosofia",
 			"descrição": "",
-			"latitude": "-16.60638",
-			"longitude": "-49.2680673"
+			"latitude": -16.60638,
+			"longitude": -49.2680673
 		},
 		"Instituto de Matemática":{
 			"titulo": "Instituto de Matemática",
 			"descrição": "",
-			"latitude": "-16.6050435",
-			"longitude": "-49.2685286"
+			"latitude": -16.6050435,
+			"longitude": -49.2685286
 		},
 		"Faculdade de Administração, Ciências Contábeis e Ciências Econômicas":{
 			"titulo": "Faculdade de Administração, Ciências Contábeis e Ciências Econômicas",
 			"descrição": "",
-			"latitude": "-16.6038508",
-			"longitude": "-49.2679493"
+			"latitude": -16.6038508,
+			"longitude": -49.2679493
 		},
 		"Faculdade de Letras":{
 			"titulo": "Faculdade de Letras",
 			"descrição": "",
-			"latitude": "-16.6036272",
-			"longitude": "-49.2653502"
+			"latitude": -16.6036272,
+			"longitude": -49.2653502
 		},
 		"Instituto de Física":{
 			"titulo":"Instituto de Física",
 			"descrição": "",
-			"latitude": "-16.6038791",
-			"longitude": "-49.2642773"
+			"latitude": -16.6038791,
+			"longitude": -49.2642773
 		},
 		"Faculdade de História":{
 			"titulo": "Faculdade de História",
 			"descrição": "",
-			"latitude": "-16.6032558",
-			"longitude": "-49.264277"
+			"latitude": -16.6032558,
+			"longitude": -49.264277
 		},
 		"Faculdade de Comunicação Social":{
 			"titulo": "Faculdade de Comunicação Social",
 			"descrição": "",
-			"latitude": " -16.6035946",
-			"longitude": "-49.2638989"
+			"latitude": -16.6035946,
+			"longitude": -49.2638989
 		},
 		"Faculdade de Ciências Sociais":{
 			"titulo": "Faculdade de Ciências Sociais",
 			"descrição": "",
-			"latitude": "-16.6035946",
-			"longitude": "-49.2638989"
+			"latitude": -16.6035946,
+			"longitude": -49.2638989
 		},
 		"Instituto de Estudos Socio Ambientais":{
 			"titulo": "Instituto de Estudos Socio Ambientais",
 			"descrição": "",
-			"latitude": "-16.6044442",
-			"longitude": "-49.2658423"
+			"latitude": -16.6044442,
+			"longitude": -49.2658423
 		},
 		"Faculdade Artes Visuais":{
 			"titulo": "Faculdade Artes Visuais",
 			"descrição": "",
-			"latitude": "-16.6059098",
-			"longitude": "-49.262992"
+			"latitude": -16.6059098,
+			"longitude": -49.262992
 		},
 		"Escola de Música e Artes Cênicas":{
 			"titulo": "Escola de Música e Artes Cênicas",
 			"descrição": "",
-			"latitude": "-16.6054488",
-			"longitude": "-49.2616732"
+			"latitude": -16.6054488,
+			"longitude": -49.2616732
 		},
 		"Escola de Agronomia":{
 			"titulo": "Escola de Agronomia",
 			"descrição": "",
-			"latitude": "-16.5984382",
-			"longitude": "-49.2791888"
+			"latitude": -16.5984382,
+			"longitude": -49.2791888
 		},
 		"Escola de Engenharia de Alimentos":{
 			"titulo": "Escola de Engenharia de Alimentos",
 			"descrição": "",
-			"latitude": "-16.5982653",
-			"longitude": "-49.2807022"
+			"latitude": -16.5982653,
+			"longitude": -49.2807022
 		}
 	}
 }
