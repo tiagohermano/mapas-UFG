@@ -108,6 +108,9 @@ class Map: GMSMapView, GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.mapView.isMyLocationEnabled = true
+        
+        
+        
         showDirectionsButton()
         
         print("MARCADOR TOCADO")

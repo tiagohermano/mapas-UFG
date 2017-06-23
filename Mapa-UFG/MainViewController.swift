@@ -22,9 +22,15 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     static var mainView:UIView?
     
     enum Categories {
-        case Lanchonetes, Xerox, Restaurantes, Bibliotecas, Centros_aulas, Bancos
+        case Lanchonetes,
+             Xerox,
+             Restaurantes,
+             Bibliotecas,
+             Centros_aulas,
+             Bancos
     }
     
+    @IBOutlet weak var obterTrajetoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +60,11 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         
 //        let mapView = Map.setInitialMap()
 //        view = mapView
+    }
+    
+    func configObterTrajetoButton() {
+        obterTrajetoButton.layer.cornerRadius = obterTrajetoButton.frame.width / 2
+        obterTrajetoButton.clipsToBounds = true
     }
     
     func showMarkers(_ selectedCategory:String?) {
