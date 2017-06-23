@@ -87,6 +87,9 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
                     
                     if let categoriaSelecionada = selectedCategory {
                         switch categoriaSelecionada {
+                        case "Institutos/Faculdades" :
+                            let lanchonetes = jsonObj["institutos"]
+                            marcadores = locais.getMarkers(locaisCategoria: lanchonetes, categoria: "institutos")
                         case "Lanchonetes" :
                             let lanchonetes = jsonObj["lanchonetes"]
                             marcadores = locais.getMarkers(locaisCategoria: lanchonetes, categoria: "lanchonetes")

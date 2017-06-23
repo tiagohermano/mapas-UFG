@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class Menu: UITableViewController {
-    var itensMenu: [String] = ["Lanchonetes", "Xerox", "Restaurantes", "Bibliotecas", "Centros de Aulas", "Bancos"]
-    var itensImage: [UIImage] = [#imageLiteral(resourceName: "menu_lanchonete"), #imageLiteral(resourceName: "menu_xerox"), #imageLiteral(resourceName: "menu_restaurante"), #imageLiteral(resourceName: "menu_biblioteca"), #imageLiteral(resourceName: "menu_centro_aulas"), #imageLiteral(resourceName: "menu_banco")]
+    var itensMenu: [String] = ["Institutos/Faculdades", "Lanchonetes", "Xerox", "Restaurantes", "Bibliotecas", "Centros de Aulas", "Bancos"]
+    var itensImage: [UIImage] = [#imageLiteral(resourceName: "menu_institutos"), #imageLiteral(resourceName: "menu_lanchonete"), #imageLiteral(resourceName: "menu_xerox"), #imageLiteral(resourceName: "menu_restaurante"), #imageLiteral(resourceName: "menu_biblioteca"), #imageLiteral(resourceName: "menu_centro_aulas"), #imageLiteral(resourceName: "menu_banco")]
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
