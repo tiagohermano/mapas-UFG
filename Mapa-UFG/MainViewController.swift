@@ -21,15 +21,6 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     
     static var mainView:UIView?
     
-    enum Categories {
-        case Lanchonetes,
-             Xerox,
-             Restaurantes,
-             Bibliotecas,
-             Centros_aulas,
-             Bancos
-    }
-    
     @IBOutlet weak var obterTrajetoButton: UIButton!
     
     override func viewDidLoad() {

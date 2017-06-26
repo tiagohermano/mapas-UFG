@@ -15,7 +15,6 @@
 		5C6F9B3B1ED0FCBF00F5FE3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F9B3A1ED0FCBF00F5FE3E /* Assets.xcassets */; };
 		5C6F9B3E1ED0FCBF00F5FE3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F9B3C1ED0FCBF00F5FE3E /* LaunchScreen.storyboard */; };
 		5C95D7F11EDA4586003C831B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C95D7F01EDA4586003C831B /* SWRevealViewController.m */; };
-		8B00D79F1EE6C69900C9D5EA /* Viewteste.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B00D79E1EE6C69900C9D5EA /* Viewteste.xib */; };
 		8B0752971EE964A5007807F2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0752961EE964A5007807F2 /* Menu.swift */; };
 		8B67CAB91EEABA35003C8ABE /* Locais.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B67CAB81EEABA35003C8ABE /* Locais.json */; };
 		8BA9751E1EE9979600FFBDD6 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9751D1EE9979600FFBDD6 /* MenuTableCell.swift */; };
@@ -35,7 +34,6 @@
 		5C95D7EE1EDA4585003C831B /* Mapa-UFG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mapa-UFG-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C95D7EF1EDA4586003C831B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5C95D7F01EDA4586003C831B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		8B00D79E1EE6C69900C9D5EA /* Viewteste.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Viewteste.xib; sourceTree = "<group>"; };
 		8B0752961EE964A5007807F2 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		8B67CAB81EEABA35003C8ABE /* Locais.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locais.json; sourceTree = "<group>"; };
 		8BA9751D1EE9979600FFBDD6 /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				5C95D7EF1EDA4586003C831B /* SWRevealViewController.h */,
 				5C95D7F01EDA4586003C831B /* SWRevealViewController.m */,
 				5C95D7EE1EDA4585003C831B /* Mapa-UFG-Bridging-Header.h */,
-				8B00D79E1EE6C69900C9D5EA /* Viewteste.xib */,
 			);
 			path = "Mapa-UFG";
 			sourceTree = "<group>";
@@ -188,7 +185,6 @@
 				5C6F9B3E1ED0FCBF00F5FE3E /* LaunchScreen.storyboard in Resources */,
 				8B67CAB91EEABA35003C8ABE /* Locais.json in Resources */,
 				5C6F9B3B1ED0FCBF00F5FE3E /* Assets.xcassets in Resources */,
-				8B00D79F1EE6C69900C9D5EA /* Viewteste.xib in Resources */,
 				5C6F9B391ED0FCBF00F5FE3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
